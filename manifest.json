@@ -1,0 +1,59 @@
+{
+  "manifest_version": 3,
+  "name": "ChatContinuity",
+  "version": "1.0.0",
+  "description": "Maintains structured project memory in AI chats and transitions to fresh chats without losing context.",
+  "icons": {
+    "128": "assets/icon.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "assets/icon.png"
+  },
+  "options_page": "options.html",
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://chatgpt.com/*",
+        "https://claude.ai/*"
+      ],
+      "js": ["content_bundle.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "permissions": [
+    "storage",
+    "tabs"
+  ],
+  "host_permissions": [
+    "https://api.openai.com/*",
+    "https://openrouter.ai/*",
+    "https://generativelanguage.googleapis.com/*",
+    "http://localhost/*",
+    "http://localhost:11434/*",
+    "http://127.0.0.1/*",
+    "http://127.0.0.1:11434/*"
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "constants.js",
+        "utils.js",
+        "storage.js",
+        "selectorManager.js",
+        "domExtractor.js",
+        "limitDetector.js",
+        "continuation.js",
+        "memoryManager.js"
+      ],
+      "matches": [
+        "https://chatgpt.com/*",
+        "https://claude.ai/*"
+      ]
+    }
+  ]
+}

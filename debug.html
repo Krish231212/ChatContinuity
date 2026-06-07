@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ChatContinuity Storage Inspector</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: #1e1e24;
+      color: #f3f4f6;
+      padding: 30px;
+    }
+    h1 {
+      color: #3b82f6;
+      border-bottom: 1px solid #374151;
+      padding-bottom: 10px;
+    }
+    button {
+      background: #3b82f6;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 14px;
+      font-weight: 600;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-right: 10px;
+      margin-bottom: 20px;
+    }
+    button:hover {
+      background: #2563eb;
+    }
+    .danger {
+      background: #ef4444;
+    }
+    .danger:hover {
+      background: #dc2626;
+    }
+    pre {
+      background-color: #111827;
+      border: 1px solid #374151;
+      border-radius: 8px;
+      padding: 20px;
+      overflow-x: auto;
+      font-family: "Fira Code", Consolas, Monaco, monospace;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+  <h1>ChatContinuity Storage Inspector</h1>
+  <div>
+    <button id="btn-refresh">Refresh Storage</button>
+    <button id="btn-clear-all" class="danger">Clear Entire Local Storage</button>
+  </div>
+  <h3>Current Raw Storage Content:</h3>
+  <pre id="storage-output">Loading storage...</pre>
+
+  <script type="module" src="debug.js"></script>
+</body>
+</html>

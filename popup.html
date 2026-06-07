@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ChatContinuity Popup</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+
+<div class="popup-container">
+  <div class="header">
+    <div class="brand">
+      <img src="assets/icon.png" alt="Logo" class="logo">
+      <div class="brand-text">
+        <h2>ChatContinuity</h2>
+        <span id="platform-badge" class="badge badge-platform">Inactive</span>
+      </div>
+    </div>
+    <button id="btn-settings" class="icon-btn" title="Settings">⚙️</button>
+  </div>
+
+  <div class="content">
+    <!-- Empty State -->
+    <div id="empty-state" class="panel empty-panel">
+      <p class="empty-text">No active conversation tracked. Open ChatGPT or Claude and send a message to begin tracking continuity.</p>
+    </div>
+
+    <!-- Active State -->
+    <div id="active-state" style="display: none;">
+      <!-- Project Summary Card -->
+      <div class="panel project-card">
+        <h3 id="project-name">Project Name</h3>
+        <p id="project-goal">Goal: ...</p>
+        <div class="task-summary">
+          <div class="task-badge completed-badge"><span id="task-completed-count">0</span> Completed</div>
+          <div class="task-badge pending-badge"><span id="task-pending-count">0</span> Pending</div>
+        </div>
+      </div>
+
+      <!-- Health / Metrics Panel -->
+      <div class="panel health-panel">
+        <div class="health-header">
+          <span>Conversation Health</span>
+          <span id="health-status-badge" class="badge badge-success">Healthy</span>
+        </div>
+        <div class="metrics">
+          <div class="metric">
+            <span class="metric-label">Turns</span>
+            <span id="turns-value" class="metric-val">0 / 250</span>
+          </div>
+          <div class="metric">
+            <span class="metric-label">Context Size</span>
+            <span id="tokens-value" class="metric-val">0 tokens</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Memory Details Toggle -->
+      <div class="collapsible-section">
+        <button id="btn-toggle-memory" class="collapse-trigger">
+          <span>View Project Memory</span>
+          <span class="arrow">▼</span>
+        </button>
+        <div id="memory-details" class="collapse-content" style="display: none;">
+          <div class="memory-section">
+            <h4>Current Task</h4>
+            <p id="mem-current-task" class="mem-text">...</p>
+          </div>
+          <div class="memory-section">
+            <h4>Decisions</h4>
+            <ul id="mem-decisions" class="mem-list"></ul>
+          </div>
+          <div class="memory-section">
+            <h4>Recent Context</h4>
+            <ul id="mem-context" class="mem-list"></ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Primary Action Buttons -->
+      <div class="action-buttons">
+        <button id="btn-continue" class="btn btn-primary">Continue in Fresh Chat</button>
+        <div class="secondary-actions">
+          <button id="btn-sync" class="btn btn-secondary">Sync Memory</button>
+          <button id="btn-clear" class="btn btn-danger">Reset Session</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="sync-status" class="sync-banner" style="display: none;">
+    <span class="spinner"></span> Syncing memory with GPT...
+  </div>
+</div>
+
+<script type="module" src="popup.js"></script>
+</body>
+</html>
