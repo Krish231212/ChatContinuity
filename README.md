@@ -1,5 +1,7 @@
 # ChatContinuity
 
+![ChatContinuity Banner](assets/banner.png)
+
 Have you ever noticed that the longer you chat with ChatGPT or Claude, the slower and dumber they get? 
 
 As your conversation grows, the browser tab starts lagging, the AI begins forgetting the instructions you gave it at the start, and eventually, you hit those annoying rate limits or message caps.
@@ -28,8 +30,14 @@ Since this is a custom extension (not on the Chrome Web Store yet), you can inst
 3. Turn on **Developer mode** (it's a toggle switch in the top-right corner of the page).
 4. Click the **Load unpacked** button in the top-left corner.
 5. Select the `ChatContinuity` folder you just downloaded.
-6. Click the extension puzzle piece icon in your browser toolbar, find **ChatContinuity**, and open its **Options** (settings) page.
-7. Paste your API key (you can use your OpenAI API key, Gemini API key, or OpenRouter key), choose your model, and click **Save Settings**. (You can click **Test Connection** to make sure it works!).
+6. **Pin the extension:** Click the extension puzzle piece icon in your browser toolbar, find **ChatContinuity**, and click the Pin icon so it is visible in your toolbar.
+   
+   ![Step 1: Pin Extension](assets/step1_pin.png)
+
+7. Click the extension icon, open its **Options** (settings) page.
+8. Paste your API key (you can use your OpenAI API key, Gemini API key, or OpenRouter key), choose your model, and click **Save Settings**. (You can click **Test Connection** to make sure it works!).
+
+   ![Step 2: Configure Settings](assets/step2_settings.png)
 
 ---
 
@@ -37,6 +45,9 @@ Since this is a custom extension (not on the Chrome Web Store yet), you can inst
 
 1. Open **ChatGPT** or **Claude** and start working on your project as usual.
 2. As you chat, the extension keeps track of the conversation size in the background. You can click the extension icon anytime to see your active project goal, completed tasks, and current status.
+
+   ![Step 3: Track Chat Context](assets/step3_chatgpt.png)
+
 3. When the chat starts getting too long, a small warning box will slide in at the bottom-right corner of your screen.
 4. Click **"Continue in Fresh Chat"**.
 5. The extension will automatically open a new chat page, summarize everything you've done so far, paste the summary into the text box, and focus your cursor. 
